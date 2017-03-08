@@ -1,0 +1,55 @@
+
+
+		<div class="dashboard-content">
+
+			<div class="pull-right">
+        <%= link_to("增添课程", new_course_path, :class => "btn green-btn" ) %>
+      </div>
+
+
+		<div class="course-content">
+		  <div class="dashboard-tab col-xs-12">
+			  <ul class="nav nav-tabs">
+			    <li class="title active"><a class="title active" href="/dashboard">全部课程</a></li>
+			  </ul>
+		  </div>
+
+		  <div class="all-course">
+
+			 <% @courses.each do |course| %>
+					<%= link_to course_path(course) do %>
+						<div class="course-card-unlock">
+							<div class="new-task-cover"><span>新作业</span></div>
+						  <div class="title-cover"></div>
+						  <div class="start-btn">
+						    <span>进入课程</span>
+						  </div>
+						  <div class="title">
+						    <h2>
+						      <%= course.name %>
+						    </h2>
+						  </div>
+						  <div class="course-img">
+								<img src="/images/meta_learn.png" />
+						  </div>
+						  <div class="schedule-block">
+						    <p class="time">
+						      本课程2017年03月01日开课
+						    </p>
+						    <div class="percent-bar">
+						      <div class="progress"></div>
+						    </div>
+						    <p class="task">
+						      你还未开始学习本课程
+						    </p>
+						  </div>
+						</div>
+					<% end %>
+
+				<% end %>
+
+
+		  </div>
+		</div>
+
+	  </div>

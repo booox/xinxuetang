@@ -1,0 +1,51 @@
+
+
+		<div class="dashboard-content course-block">
+
+      <div class="pull-right">
+        <%= link_to("Edit", edit_course_path(@course), :class => "btn btn-primary" ) %>
+        <%= link_to("Delete", course_path(@course), method: :delete, :class => "btn btn-danger",
+                            :data => {:confirm => "Are you sure?"} ) %>
+      </div>
+
+      <div class="course-des">
+        <h3>
+          <i class="fa fa-credit-card"></i>课程简介
+        </h3>
+        <div class="purchase-course-lp course-description-style">
+          <div>
+            <strong>本课目的：</strong><br><br>
+            <p><%= @course.goal %></p>
+          </div>
+          <div>
+            <strong>说明：</strong>
+            <p>
+              <%= @course.description %>
+            </p>
+          </div>
+          <div>
+            <strong>课程需求：</strong>
+            <p>
+              <%= @course.needs %>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-action">
+        <a class="action-btn" href="/courses/1/syllabus">开始学习</a>
+      </div>
+
+      <div class="operate-intro">
+        <h3>
+          <i class="fa fa-check-square-o"></i>操作提示
+        </h3>
+        <p>请按照教材目录的顺序学习，并完成相应的作业。</p>
+        <p>查看教材 Post 时，可以使用键盘左/右键进行上一页/下一页的切换。</p>
+        <p>课程中遇到问题可以先查看 FAQ 解答。</p>
+        <p>可以使用搜索功能快速查找本教材中的内容。</p>
+        <p>在动态里可以看到本课程其他同学提交的作业。</p>
+      </div>
+
+
+    </div>

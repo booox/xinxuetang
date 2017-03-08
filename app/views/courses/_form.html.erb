@@ -1,0 +1,12 @@
+<%= simple_form_for @course do |f| %>
+	<div class="group"><%= f.input :name, placeholder: "请输入课程标题" %></div>
+	<div class="group"><%= f.input :goal, placeholder: "请输入课程目的" %></div>
+	<div class="group"><%= f.input :description, placeholder: "请输入课程描述" %></div>
+	<div class="group"><%= f.input :needs, placeholder: "请输入课程要求" %></div>
+	<div class="group"><%= f.input :hint, placeholder: "请输入课程提示" %></div>
+
+
+
+	<%= f.submit "Submit", data: {disable_with: "Submitting..."} %>
+
+<% end %>
