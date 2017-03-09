@@ -1,6 +1,4 @@
-
-
-		<div class="dashboard-content course-block">
+  <div class="dashboard-content course-block">
 
       <div class="pull-right">
         <%= link_to("Edit", edit_course_path(@course), :class => "btn btn-primary" ) %>
@@ -20,7 +18,7 @@
           <div>
             <strong>说明：</strong>
             <p>
-              <%= @course.description %>
+              <%= render_markdown(@course.description) %>
             </p>
           </div>
           <div>
@@ -48,4 +46,4 @@
       </div>
 
 
-    </div>
+  </div>
