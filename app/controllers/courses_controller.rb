@@ -1,4 +1,5 @@
 class CoursesController < ApplicationController
+  layout "syllabus"
 
   def index
     @courses = Course.all
@@ -6,6 +7,11 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
+  end
+
+  def syllabus
+    @course = Course.find(params[:id])
+    @posts = Post.where("course_id = ?", @course.id)
   end
 
   def new

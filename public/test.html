@@ -1,0 +1,444 @@
+<div id="qz-wrapper">
+      <nav class="navbar navbar-default posts-show-navbar" id="qz-header" style="position: fixed; display: none;">
+  <div class="navbar-container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/dashboard">
+        <span class="logo"><i class="fa fa-envira logo-icon" aria-hidden="true"></i>全栈营</span>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-left navbar-link">
+  <li><a href="/dashboard">学习中心</a></li>
+  <li><a href="/meetup_groups">Meetup</a></li>
+    <li>
+
+      <a href="/live">直播室</a>
+    </li>
+
+  <li><a href="/competition_season_2">编程比赛</a></li>
+    <li><a target="_blank" href="http://docs.qzy.camp/">帮助文档</a></li>
+  <li><a target="_blank" href="http://forum.qzy.camp/">交流论坛</a></li>
+
+</ul>
+
+<ul class="nav navbar-nav navbar-right">
+  <li>
+  <a class="mail-icon" id="mail-icon-right" href="/conversations">
+  <i class="fa fa-envelope" aria-hidden="true"></i>
+</a></li>
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+      <i class="fa fa-user-circle" aria-hidden="true"></i>&nbsp;liuzx
+      <span class="caret"></span>
+    </a>
+   <ul class="dropdown-menu custom-dropdown-menu">
+      <li><a href="/account/users">我的账户</a></li>
+      <li><a href="/account/orders">我的订单</a></li>
+      <li><a href="/account/favorites">我的收藏</a></li>
+      <li class="divider" role="separator"></li>
+      <li><a href="/account/referral_code">推荐码</a></li>
+      <li class="divider" role="separator"></li>
+      <li><a rel="nofollow" data-method="delete" href="/sign_out">退出</a></li>
+    </ul>
+  </li>
+
+</ul>
+
+    </div>
+  </div>
+</nav>
+
+      <div id="qz-content">
+          <div class="course-menu" style="position: fixed; height: 50px; z-index: 1000;">
+  <div class="menu-content" style="padding-top: 5px;">
+    <div class="left-block hidden-xs">
+      <h1><a href="/courses/3/syllabus">Rails 第三课：Rails 101</a></h1>
+    </div>
+    <div class="search-block hidden-xs hidden-sm">
+      <div class="search">
+  <div class="input-block">
+    <form class="navbar-form" action="/courses/3/syllabus/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+    <div class="input-group">
+      <span class="input-group-btn search-btn">
+        <button type="submit">
+          <i class="fa fa-search"></i>
+        </button>
+      </span>
+      <input type="text" name="q" value="" placeholder="搜索本课程教材">
+    </div>
+</form>  </div>
+</div>
+
+    </div>
+    <div class="right-block">
+      <div class="tab_menu">
+        <ul class="nav nav-tabs">
+          <li><a href="/courses/3">
+          <i class="fa fa-television"></i>
+          概览
+</a></li>          <li class="active"><a class="active" href="/courses/3/syllabus">
+          <i class="fa fa-list-ul"></i>
+          教材
+</a></li>          <li><a href="/courses/3/assignments">
+          <i class="fa fa-file-code-o"></i>
+          作业
+</a></li>          <li><a href="/courses/3/faqs">
+          <i class="fa fa-comments-o"></i>
+          FAQ
+</a></li>          <li><a href="/courses/3/activities">
+          <i class="fa fa-tags"></i>
+          动态
+</a></li>          <li><a href="/courses/3/leaderboard">
+          <i class="fa fa-star-o"></i>
+          积分榜
+</a></li>        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+          <div class="fixed" style="height: 125px;"></div>
+        <div class="flash-block">
+
+        </div>
+        <div class="container course-block" id="show-content">
+          <div class="row">
+            <!-- <div class="breadcrumb-block">
+            </div> -->
+            <div class="post-visitor">
+  <div class="des-text">
+    <p>有<span>0</span>位同学正在浏览当前页面</p>
+  </div>
+  <div class="visitors-list">
+  </div>
+</div>
+
+<div class="course-post">
+
+  <div class="post-title-h1 markdown">
+    <h1>
+      6-2 建立文章的架构
+    </h1>
+    <div id="favorite" class="favorite-icon-block">
+        <a class="favorites-tooltip" title="" data-placement="left" data-original-title="收藏本节教材" data-remote="true" rel="nofollow" data-method="post" href="/favorites?post_id=76">
+    <span class="fa fa-bookmark-o"></span>
+</a>
+    </div>
+  </div>
+
+  <div class="post group">
+    <div class="post-content markdown">
+      <h2>目标</h2>
+<p>在这一章，我们要带大家在群里面可以发文章。我们会完成以下事项：</p>
+
+<ul>
+<li>文章 Post 要有“内容”、“所属讨论群组”、“叙述”</li>
+<li>发文网址是在 <a href="http://localhost:3000/groups/1/posts/new" rel="nofollow" target="_blank">http://localhost:3000/groups/1/posts/new</a>
+</li>
+</ul>
+
+<p><br></p>
+<h2>步骤</h2><h3>Step 0. git checkout -b ch05</h3>
+<p>因为我们现在要实作第五章的内容，新增一个 branch 把实作内容集中在 ch05 是比较合理的。将来回顾就可以比较清楚 在 ch05 我们做了哪一些练习。</p>
+
+<p><code>git checkout -b ch05</code></p>
+
+<p><br></p>
+<h3>Step 1. 设计 Post 的 model 架构</h3>
+<ul>
+<li>文章内容要有“内容”、“所属讨论群组”、“叙述”</li>
+<li>我们在这里要建立一个 model <strong>Post</strong>，并建立数据表 post 的三个栏位: content ( text 文字属性) 、group_id (integer 数字属性)、 user_id ( integer 数字属性）</li>
+</ul>
+
+<p><code>rails g model post content:text group_id:integer user_id:integer</code></p>
+
+<p>将数据库建立起来，并执行 rake db:migrate</p>
+
+<p><code>rake db:migrate</code></p>
+
+<p><br></p>
+<h3>Step 2. 建立 Group / Post / User 三者间的关系</h3>
+<ul>
+<li>Group has_many posts</li>
+</ul>
+
+<figure class="figure-code code"><figcaption><span>app/models/group.rb
+</span></figcaption><div class="highlight"><pre><span class="k">class</span> <span class="nc">Group</span> <span class="o">&lt;</span> <span class="no">ApplicationRecord</span>
+  <span class="n">belongs_to</span> <span class="ss">:user</span>
+  <span class="n">has_many</span> <span class="ss">:posts</span>
+  <span class="n">validates</span> <span class="ss">:title</span><span class="p">,</span> <span class="ss">presence: </span><span class="kp">true</span>
+<span class="k">end</span>
+</pre></div>
+</figure>
+
+<ul>
+<li>User has_many posts</li>
+</ul>
+
+<figure class="figure-code code"><figcaption><span>app/models/user.rb
+</span></figcaption><div class="highlight"><pre><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">ApplicationRecord</span>
+  <span class="c1"># Include default devise modules. Others available are:
+</span>
+  <span class="c1"># :confirmable, :lockable, :timeoutable and :omniauthable
+</span>
+  <span class="n">devise</span> <span class="ss">:database_authenticatable</span><span class="p">,</span> <span class="ss">:registerable</span><span class="p">,</span>
+         <span class="ss">:recoverable</span><span class="p">,</span> <span class="ss">:rememberable</span><span class="p">,</span> <span class="ss">:trackable</span><span class="p">,</span> <span class="ss">:validatable</span>
+
+  <span class="n">has_many</span> <span class="ss">:groups</span>
+  <span class="n">has_many</span> <span class="ss">:posts</span>
+<span class="k">end</span>
+</pre></div>
+</figure>
+
+<ul>
+<li>Post belongs_to User</li>
+<li>Post belongs_to Group</li>
+</ul>
+
+<figure class="figure-code code"><figcaption><span>app/models/post.rb
+</span></figcaption><div class="highlight"><pre><span class="k">class</span> <span class="nc">Post</span> <span class="o">&lt;</span> <span class="no">ApplicationRecord</span>
+  <span class="n">belongs_to</span> <span class="ss">:user</span>
+  <span class="n">belongs_to</span> <span class="ss">:group</span>
+<span class="k">end</span>
+</pre></div>
+</figure>
+
+<p><br></p>
+<h3>Step 3. git 存档</h3>
+<p><code>git add .</code><br>
+<code>git commit -m "add post and hook group/user relation"</code></p>
+
+<p><br></p>
+<h3>Step 4. 建立 Post Controller</h3>
+<p><code>rails g controller posts</code></p>
+
+<p><br></p>
+<h3>Step 5. 设立 routing</h3>
+<p>修改 config/routes.rb</p>
+
+<p>将 resources :posts 加入 resources :groups 内。</p>
+
+<p></p><figure><a href="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/tDOcEw7QFyG41ktvz05g_posts_resources.png" data-fancybox="images" class="post-image"><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/tDOcEw7QFyG41ktvz05g_posts_resources.png" title=""></a></figure><p></p>
+
+<figure class="figure-code code"><figcaption><span>config/routes.rb
+</span></figcaption><div class="highlight"><pre><span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">routes</span><span class="p">.</span><span class="nf">draw</span> <span class="k">do</span>
+  <span class="n">devise_for</span> <span class="ss">:users</span>
+  <span class="n">resources</span> <span class="ss">:groups</span> <span class="k">do</span>
+    <span class="n">resources</span> <span class="ss">:posts</span>
+  <span class="k">end</span>
+  <span class="n">root</span> <span class="s1">'groups#index'</span>
+<span class="k">end</span>
+
+</pre></div>
+</figure>
+
+<p>做了这件事后，执行</p>
+
+<p><code>rake routes</code></p>
+
+<p>然后你就会发现， routing 列表内产生了 /groups/:group_id/posts/new 这样的网址支援。</p>
+
+<p></p><figure><a href="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/QxlWwWQmR5yUvfzjxkeq_rake_routes.png" data-fancybox="images" class="post-image"><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/QxlWwWQmR5yUvfzjxkeq_rake_routes.png" title=""></a></figure><p></p>
+
+<p><br></p>
+<h3>Step 6. git 存档</h3>
+<p><code>git add .</code><br>
+<code>git commit -m "add posts nested route"</code></p>
+
+<p><br></p>
+<h3>Step 7. 在 groups#show 新增 “发表文章”按钮</h3>
+<p>修改 app/views/groups/show.html.erb</p>
+
+<p>然后加入一行</p>
+
+<figure class="figure-code code"><figcaption><span>app/views/groups/show.html.erb
+</span></figcaption><div class="highlight"><pre>  <span class="cp">&lt;%=</span> <span class="n">link_to</span><span class="p">(</span><span class="s2">"Write a Post"</span><span class="p">,</span> <span class="n">new_group_post_path</span><span class="p">(</span><span class="vi">@group</span><span class="p">),</span> <span class="ss">class: </span><span class="s2">"btn btn-default pull-right"</span><span class="p">)</span><span class="cp">%&gt;</span>
+</pre></div>
+</figure>
+
+<p>在权限判断的位置上面：</p>
+
+<p></p><figure><a href="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/IWovsg8Tz2uFiThPPdPj_show_html_erb_%E2%80%94__Users_xdite_Documents_projects_rails101.png" data-fancybox="images" class="post-image"><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/IWovsg8Tz2uFiThPPdPj_show_html_erb_%E2%80%94__Users_xdite_Documents_projects_rails101.png" title=""></a></figure><p></p>
+
+<p>我们就得到了一颗可以新增文章的按钮</p>
+
+<p></p><figure><a href="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/5He41qXDQbqELgONTa7S_Rails101.png" data-fancybox="images" class="post-image"><img src="https://s3-ap-northeast-1.amazonaws.com/ontrackapp-production/5He41qXDQbqELgONTa7S_Rails101.png" title=""></a></figure><p></p>
+
+<p><br></p>
+<h3>Step 8. git 存档</h3>
+<p><code>git add .</code><br>
+<code>git commit -m "add post button"</code></p>
+
+    </div>
+  </div>
+
+
+
+  <div class="panic-panel">
+  <div class="row panic-panel-title">
+    <h4>对本页内容的感受如何？</h4>
+
+      <div class="complain-btn">
+        <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#complainModal" id="want-to-complain-btn">
+          📣 &nbsp;我要吐槽
+        </button>
+      </div>
+  </div>
+
+  <!-- new feeling's UI -->
+
+  <div class="panic-panel-body ui-selectable" id="selectable" data-post-id="76">
+    <div class="item  ui-selectee" value="good">
+      <div class="ui-widget-content ui-selectee"><span class="emoji ui-selectee">😄</span><span class="text ui-selectee">So easy</span></div>
+    </div>
+    <div class="item  ui-selectee" value="normal">
+      <div class="ui-widget-content ui-selectee"><span class="emoji ui-selectee">😐</span><span class="text ui-selectee">还OK</span></div>
+    </div>
+    <div class="item  ui-selectee" value="bad">
+      <div class="ui-widget-content ui-selectee"><span class="emoji ui-selectee">😭</span><span class="text ui-selectee">崩溃了</span></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <span id="status-area" class="feeling-submit-tips"></span>
+  </div>
+
+</div>
+
+
+
+<!-- 吐槽Modal -->
+<div class="modal fade message-modal-style" id="complainModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title" id="complainModalLabel">您对本篇教程有什么想说的？</h4>
+      </div>
+      <form novalidate="novalidate" class="simple_form new_complain" id="new_complain" action="/complains" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="Zcn1PEEw88LPR8IY/ADoQWLYRs6bQ8pRPMaixh57AwOMfmTuWEwRx0iD6rG1Ck4tdtDu9m0hROCCX6Lj4nouwA==">
+        <div class="modal-body">
+          <div class="input-block">
+            <div class="form-group hidden complain_post_id"><input class="form-control hidden" value="76" type="hidden" name="complain[post_id]" id="complain_post_id"></div>
+            <div class="form-group text optional complain_content"><label class="control-label text optional" for="complain_content">槽点/反馈(如果遇到课程技术问题，请直接到Slack向助教提问)</label><textarea class="form-control text optional" name="complain[content]" id="complain_content"></textarea></div>
+            <div class="message-modal-footer">
+              <a href="#" data-dismiss="modal">取消</a>
+              <input type="submit" name="commit" value="吐槽" class="btn btn-primary" id="complain-submit-btn" disabled="disabled">
+            </div>
+          </div>
+        </div>
+</form>    </div>
+  </div>
+</div>
+
+
+    <div class="group post-nav-btn">
+
+<ul class="pager-custom">
+  <li class="previous"> <a id="previous" href="/posts/75"><i class="fa fa-arrow-left"></i><span> 上一页</span></a></li>
+  <li class="keyboard-tips"><i class="fa fa-lightbulb-o" aria-hidden="true"></i>可以使用<kbd>←</kbd><kbd>→</kbd>键进行翻页</li>
+  <li class="next"><a href="/posts/77">下一页<span class="fa fa-arrow-right" id="next"></span></a> </li>
+</ul>
+
+    </div>
+
+
+
+</div>
+
+          </div>
+        </div>
+        <div id="backtotop" style="display: block;">
+          <a href="#" class="btn-backtotop">
+            <span class="up-arrow">
+              <i class="fa fa-arrow-up" aria-hidden="true"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+      <script src="/assets/course-11fc416bbdb3b371a15a729e4e5096fce1e3eb54e0d99b9b63f05f784135c6a4.js"></script>
+      <footer id="qz-footer">
+    <div class="footer-section">
+        <div class="footer-content">
+            <div class="contact-line-block">
+                <div class="right-block">
+                    <div class="line">
+                        <div class="icon">
+                            <i class="fa fa-comments-o fa-fw" aria-hidden="true"></i>
+                        </div>
+                        <div class="link">
+                            <a href="#" onclick="Intercom('show');">在线客服<br class="mobile-view">
+                                <span class="xs-mobile">(非技术答疑，工作日10:00-19:00)</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="introduce">
+                        <div class="img-block">
+                            <a href="http://www.xinshengdaxue.com/" target="_blank"><img src="https://fullstack.xinshengdaxue.com/images/xsdx-logo.png"></a>
+                        </div>
+                        <div class="introduce-block">
+                            <p>
+                                新生大学 - 软件学院是李笑来对未来世界的实验计划，旨在改变中国的计算机教育。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="des-block">
+              <div class="column-block">
+                <div class="column-left">
+                    <ul class="list-unstyled">
+                        <li class="column-title">全栈营</li>
+                        <li><a href="/pages/course_intro">课程介绍</a></li>
+                        <li><a href="/pages/teachers">教学团队</a></li>
+                        <li><a href="/pages/students">学员心得</a></li>
+                    </ul>
+                </div>
+                <div class="column-center">
+                    <ul class="list-unstyled">
+                        <li class="column-title">课程资源</li>
+                        <li><a href="/dashboard">学习中心</a></li>
+                        <li><a target="_blank" href="http://docs.qzy.camp/">帮助文档</a></li>
+                        <li><a target="_blank" href="http://forum.qzy.camp/">交流论坛</a></li>
+                    </ul>
+                </div>
+                <div class="column-right">
+                    <ul class="list-unstyled">
+                        <li class="column-title">关于我们</li>
+                        <li><a href="/pages/about">公司介绍</a></li>
+                        <li><a href="/pages/faq">常见问题</a></li>
+                        <li><a href="/pages/contact">联系方式</a></li>
+                    </ul>
+                </div>
+            </div>
+          </div>
+
+            <div class="fline"></div>
+            <div class="copyright-block">
+                <div class="copyright-content">
+                    <div class="copyright-info">
+                        <p>
+                            © 2017 情非得已(北京)科技有限公司
+                        </p>
+                    </div>
+                    <div class="legal-info">
+                      <p>
+                          本站聘请孙雁飞律师为法律顾问
+                      </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+      <div id="modal-from-dom" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-from-dom-label" aria-hidden="true">
+
+</div>
+
+    </div>

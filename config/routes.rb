@@ -4,5 +4,12 @@ Rails.application.routes.draw do
 
   root "welcome#index"
 
-  resources :courses
+  resources :courses do
+    member do
+      get 'syllabus'
+    end
+    # resources :posts
+  end
+
+  resources :posts
 end
