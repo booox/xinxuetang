@@ -1,0 +1,7 @@
+
+<%= simple_form_for [@course, @section] do |f| %>
+	<div class="group"><%= f.input :name, placeholder: "请输入章节标题" %></div>
+
+	<%= f.submit "Submit", data: {disable_with: "Submitting..."} %>
+
+<% end %>

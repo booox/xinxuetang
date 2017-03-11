@@ -2,14 +2,16 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root "welcome#index"
+  root "courses#index"
 
   resources :courses do
     member do
       get 'syllabus'
     end
-    # resources :posts
+    resources :sections, only: [:new, :create, :edit, :update, :destroy]
   end
+
+  # resources :sections, only: [:show, :edit, :update, :destory]
 
   resources :posts
 end

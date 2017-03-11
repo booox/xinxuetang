@@ -11,7 +11,8 @@ class CoursesController < ApplicationController
 
   def syllabus
     @course = Course.find(params[:id])
-    @posts = Post.where("course_id = ?", @course.id)
+    @sections = Section.where("course_id = ?", @course.id)
+    # @sections = Section.all
   end
 
   def new
@@ -20,7 +21,7 @@ class CoursesController < ApplicationController
 
   def create
     @course = Course.new(course_params)
-    @course.create_user_id = current_user.id
+    @course.creator_id = current_user.id
 
     if @course.save
       redirect_to courses_path, notice: "Course Created."
