@@ -10,8 +10,9 @@ class CoursesController < ApplicationController
   end
 
   def syllabus
-    @course = Course.find(params[:id])
-    @sections = Section.where("course_id = ?", @course.id)
+    @course = Course.includes(:sections).includes(:posts).find(params[:id])
+    # @course = Course.find(params[:id])
+    # @sections = Section.where("course_id = ?", @course.id)
     # @sections = Section.all
   end
 

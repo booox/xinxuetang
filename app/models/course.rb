@@ -1,5 +1,4 @@
 class Course < ApplicationRecord
-
-  has_many :posts
-  has_many :sections
+  has_many :sections, dependent: :destroy
+  has_many :posts, through: :sections
 end

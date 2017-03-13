@@ -8,10 +8,12 @@ Rails.application.routes.draw do
     member do
       get 'syllabus'
     end
-    resources :sections, only: [:new, :create, :edit, :update, :destroy]
+    resources :sections, only: [:new, :create, :edit, :update, :destroy] do
+      resources :posts, only: [:show, :new, :create, :edit, :update, :destroy]
+    end
+    # resources :sections, shallow: true
   end
 
-  # resources :sections, only: [:show, :edit, :update, :destory]
 
   resources :posts
 end

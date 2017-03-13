@@ -1,5 +1,5 @@
 class Section < ApplicationRecord
-  has_many :posts
-
   belongs_to :course
+
+  has_many :posts, dependent: :destroy
 end

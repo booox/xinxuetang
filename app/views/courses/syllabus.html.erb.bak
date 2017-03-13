@@ -15,7 +15,7 @@
       </div>
 
 
-     <% @course.sections.each do |section| %>
+     <% @sections.each do |section| %>
        <table class="table-striped">
          <thead>
           <tr>
@@ -25,19 +25,14 @@
             <td>
               <%= link_to("Edit", edit_course_section_path(@course, section), class: "btn btn-primary btn-xs") %>
       				<%= link_to("Delete", course_section_path(@course, section), method: :delete, class: "btn btn-danger btn-xs", data: {confirm: "确定要删除该章节吗？\n#{section.name}" }) %>
-      				<%= link_to("Add Post", new_course_section_post_path(@course, section), class: "btn btn-success btn-xs" ) %>
             </td>
           </tr>
          </thead>
-         <tbody>
-           <% section.posts.each do |post| %>
-             <tr><td>
-               <%= link_to(post.title, course_section_post_path(@course, section, post)) %>
-             </td></tr>
-           <% end %>
-           <!-- <tr><td><a href="">post name2</a></td></tr>
-           <tr><td><a href="">post name3</a></td></tr> -->
-         </tbody>
+         <tbod>
+           <tr><td><a href="">post name1</a></td></tr>
+           <tr><td><a href="">post name2</a></td></tr>
+           <tr><td><a href="">post name3</a></td></tr>
+         </tbod>
        </table>
 
       <% end %>
