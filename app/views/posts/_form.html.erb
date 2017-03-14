@@ -1,7 +1,11 @@
 
 <%= simple_form_for [@course, @section, @post] do |f| %>
-	<div class="group"><%= f.input :title, placeholder: "请输入 post 标题" %></div>
-	<div class="group"><%= f.input :content, placeholder: "请输入 post 正文" %></div>
+	<div class="group"><%= f.input :title,
+											label: "标题",
+											placeholder: "请输入 post 标题" %></div>
+	<div class="group"><%= f.input :content,
+											label: "正文（* 支持 Markdown 格式）",
+											placeholder: "请输入 post 正文" %></div>
 
 	<%= f.submit "Submit", data: {disable_with: "Submitting..."} %>
 

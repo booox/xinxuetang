@@ -1,3 +1,185 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.assignment-content {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    height: 40px;
+    margin-bottom: 20px
+}
+
+.assignment-content h1 {
+    font-size: 1.3em;
+    font-weight: 500;
+    color: #333;
+    position: relative;
+    float: left
+}
+
+.assignment-content p {
+    margin-left: 30px;
+    float: left;
+    position: relative;
+    color: #333;
+    letter-spacing: 0;
+    font-size: 1em;
+    margin-top: 4px;
+    font-weight: 500
+}
+
+.assignment-content .small-progress-bar {
+    float: right;
+    position: relative
+}
+
+.assignment-content .small-progress-bar .sh-progress-whole {
+    width: 310px;
+    height: 20px
+}
+
+.assignment-content .small-progress-bar .sh-progress-contents {
+    background-color: #1ecd97
+}
+
+@media (min-width: 680px) and (max-width: 991px) {
+    .course-block {
+        margin:0;
+        width: 100%;
+        padding: 15px 30px;
+        box-shadow: none;
+        padding-top: 40px
+    }
+
+    .course-menu {
+        background-color: rgba(249,249,250,0.96);
+        height: 45px;
+        display: table
+    }
+
+    .menu-content {
+        padding-top: 0 !important;
+        margin-top: 20px
+    }
+}
+
+@media (max-width: 767px) {
+    .course-block {
+        margin:0;
+        width: 100%;
+        padding: 15px 30px;
+        box-shadow: none;
+        padding-top: 40px
+    }
+
+    .course-menu {
+        background-color: rgba(249,249,250,0.96);
+        height: 50px;
+        display: table
+    }
+
+    .course-menu .menu-content {
+        padding-top: 0 !important;
+        margin-top: 5px
+    }
+
+    .course-menu .menu-content .right-block {
+        float: none
+    }
+
+    .course-menu .menu-content .right-block .nav-tabs {
+        margin-top: 10px;
+        margin-left: 6px
+    }
+
+    .assignment-content {
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 25px;
+        border-bottom: 1px solid #dedede;
+        height: 80px
+    }
+
+    .assignment-content h1 {
+        font-size: 1.3em;
+        font-weight: 400;
+        color: #333;
+        position: relative;
+        float: left;
+        line-height: 2em
+    }
+
+    .assignment-content p {
+        margin-left: 10px;
+        float: left;
+        position: relative;
+        color: #333;
+        letter-spacing: 0;
+        font-weight: 500;
+        font-size: 1em;
+        line-height: 2.5em
+    }
+
+    .assignment-content .small-progress-bar {
+        float: none;
+        margin-left: 0;
+        padding-top: 10px;
+        position: inherit;
+        display: block;
+        width: 100%;
+        max-width: 300px
+    }
+
+    .assignment-content .small-progress-bar .progress {
+        width: 310px;
+        height: 20px
+    }
+
+    .assignment-content .small-progress-bar .sh-progress-whole {
+        width: 100%;
+        height: 15px
+    }
+
+    .assignment-content .small-progress-bar .sh-progress-contents {
+        background-color: #1ecd97
+    }
+
+    .assignment-content .small-progress-bar .progress-bar {
+        line-height: 15px
+    }
+}
+
+@media (max-width: 490px) {
+    .course-menu .menu-content .right-block .tab_menu .nav-tabs>li i {
+        display:none
+    }
+}
+
+@media (max-width: 409px) {
+    .course-menu .menu-content .right-block .tab_menu .nav-tabs>li {
+        margin-left:4px;
+        margin-right: 4px
+    }
+
+    .course-menu .menu-content .right-block .tab_menu .nav-tabs>li>a {
+        padding: 0 2px
+    }
+}
+
+@media (max-width: 360px) {
+    .course-menu .menu-content .right-block .tab_menu .nav-tabs>li {
+        margin-left:2px;
+        margin-right: 2px
+    }
+
+    .course-menu .menu-content .right-block .tab_menu .nav-tabs>li>a {
+        padding: 0 0 0 4px
+    }
+}
+
+hr {
+    margin-top: 30px;
+    margin-bottom: 30px
+}
