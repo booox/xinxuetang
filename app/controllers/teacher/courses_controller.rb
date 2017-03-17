@@ -1,9 +1,13 @@
 class Teacher::CoursesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
-  before_action :find_course, only: [:destroy]
+  before_action :find_course, only: [:edit, :update, :destroy]
 
   def index
     @courses = Course.all
+  end
+
+  def show
+    @course = Course.find(params[:course_id])
   end
 
   def new
@@ -21,8 +25,21 @@ class Teacher::CoursesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @course.update(course_params)
+      redirect_to teacher_courses_path, notice: "Course Updated."
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @course.destroy
+    flash[:warning] = "Course Deleted."
+    redirect_to teacher_courses_path
   end
 
   private

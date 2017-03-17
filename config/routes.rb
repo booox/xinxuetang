@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   root "welcome#index"
 
   namespace :teacher do
-    resources :courses
+    resources :courses do
+      get 'syllabus' => "courses#show"
+    end
+
   end
 
   # resources :jobs
