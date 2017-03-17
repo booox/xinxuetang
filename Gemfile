@@ -1,4 +1,5 @@
-source 'https://rubygems.org'
+source 'https://gems.rubychina.org'
+#source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -39,6 +40,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'font-awesome-rails'
 gem 'simple_form'
+gem 'awesome_rails_console'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
