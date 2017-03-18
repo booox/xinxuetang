@@ -1,0 +1,31 @@
+<div class="container">
+
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="pull-right">
+          <%= link_to("Add a Section", new_teacher_section_path(course_id: @course.id), :class => "btn btn-default" ) %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">Name: <%= @course.name %></div>
+    <div class="col-md-3">Goal: <%= @course.goal %></div>
+    <div class="col-md-3">Needs: <%= @course.needs %></div>
+    <div class="col-md-3">Description: <%= @course.description %></div>
+  </div>
+
+  <div class="row">
+    <% if @course.sections.present? %>
+    <table>
+      <% @course.sections.each do |section| %>
+        <tr>
+          <td><%= section.name %></td>
+        </tr>
+      <% end %>
+    </table>
+    <% end %>
+  </div>
+
+
+</div>

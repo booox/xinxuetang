@@ -1,0 +1,7 @@
+<%= simple_form_for [:teacher, @section] do |f| %>
+	<div class="group"><%= f.input :name %></div>
+	<div class="group"><%= f.input :course_id, as: :hidden, input_html: { value: params[:course_id]} %></div>
+
+	<%= f.submit "Submit", data: {disable_with: "Submitting..."} %>
+
+<% end %>

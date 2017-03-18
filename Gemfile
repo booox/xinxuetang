@@ -1,4 +1,4 @@
-source 'https://gems.rubychina.org'
+source 'https://gems.ruby-china.org'
 #source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -41,6 +41,7 @@ gem 'devise'
 gem 'font-awesome-rails'
 gem 'simple_form'
 gem 'awesome_rails_console'
+gem 'rails-erd'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

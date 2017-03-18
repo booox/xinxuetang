@@ -6,10 +6,10 @@ Rails.application.routes.draw do
 
   namespace :teacher do
     resources :courses do
-      get 'syllabus' => "courses#show"
+      get 'syllabus' => "courses#syllabus"
     end
 
+    resources :sections
   end
 
-  # resources :jobs
 end

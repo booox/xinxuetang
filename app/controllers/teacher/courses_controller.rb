@@ -6,7 +6,7 @@ class Teacher::CoursesController < ApplicationController
     @courses = Course.all
   end
 
-  def show
+  def syllabus
     @course = Course.find(params[:course_id])
   end
 
@@ -18,7 +18,7 @@ class Teacher::CoursesController < ApplicationController
     @course = Course.new(course_params)
     @course.user_id = current_user.id
 
-    if @course.save!
+    if @course.save
       redirect_to teacher_courses_path, notice: "Course Created."
     else
       render :new
