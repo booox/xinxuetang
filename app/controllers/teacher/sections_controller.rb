@@ -32,17 +32,19 @@ class Teacher::SectionsController < ApplicationController
   end
 
   def update
+    @course = @section.course
     if @section.update(section_params)
-      redirect_to teacher_courses_path, notice: "section Updated."
+      redirect_to teacher_course_syllabus_path(@course), notice: "Section Updated."
     else
       render :edit
     end
   end
 
   def destroy
+    @course = @section.course
     @section.destroy
-    flash[:warning] = "section Deleted."
-    redirect_to teacher_courses_path
+    flash[:warning] = "Section Deleted."
+    redirect_to teacher_course_syllabus_path(@course)
   end
 
   private

@@ -1,31 +1,64 @@
 <div class="container">
 
-
-  <div class="row">
-    <div class="col-md-12">
-      <div class="pull-right">
-          <%= link_to("Add a Section", new_teacher_section_path(course_id: @course.id), :class => "btn btn-default" ) %>
-      </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="pull-right">
+                <%= link_to("Add a Section", new_teacher_section_path(course_id: @course.id), :class => "btn btn-default" ) %>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-3">Name: <%= @course.name %></div>
-    <div class="col-md-3">Goal: <%= @course.goal %></div>
-    <div class="col-md-3">Needs: <%= @course.needs %></div>
-    <div class="col-md-3">Description: <%= @course.description %></div>
-  </div>
+    <div class="row">
+        <div class="col-md-3">Name:
+            <%= @course.name %></div>
+        <div class="col-md-3">Goal:
+            <%= @course.goal %></div>
+        <div class="col-md-3">Needs:
+            <%= @course.needs %></div>
+        <div class="col-md-3">Description:
+            <%= @course.description %></div>
+    </div>
 
-  <div class="row">
-    <% if @course.sections.present? %>
-    <table>
-      <% @course.sections.each do |section| %>
-        <tr>
-          <td><%= section.name %></td>
-        </tr>
-      <% end %>
-    </table>
-    <% end %>
-  </div>
+    <div class="row">
+        <% if @course.sections.present? %>
+          <% @course.sections.each do |section| %>
+          <table class="table-striped">
+              <thead>
+                  <tr>
+                      <td id="section-name" colspan="2">
+                          <h3 class="pull-left">
+                            <%= section.name %>
+                            <%= link_to "Edit", edit_teacher_section_path(section), class: "btn btn-primary btn-xs" %>
+                            <%= link_to "Delete", teacher_section_path(section), method: :delete, class: "btn btn-danger btn-xs" %>
+                          </h3>
 
+                      </td>
+                  </tr>
+              </thead>
+
+              <tbody>
+                  <tr>
+                      <td class="post post-link">
+                          <div style="height: 35px; overflow:hidden;">
+                              <a href="/posts/355">
+                                  <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp;
+
+                                  <span class="fa fa-youtube-play " style="color:#9B9B9B;"></span>
+                                  [直播回放]1月3日 开学第一课
+                              </a>
+                              <span></span>
+                              <span></span>
+                          </div>
+                      </td>
+                      <td class="option">
+                          <div class="syllabus-task-area"></div>
+                      </td>
+                  </tr>
+
+              </tbody>
+          </table>
+          <% end %>
+        <% end %>
+
+    </div>
 
 </div>
