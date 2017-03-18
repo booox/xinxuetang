@@ -1,0 +1,12 @@
+<%= simple_form_for [:teacher, @post] do |f| %>
+	<div class="group"><%= f.input :name %></div>
+	<div class="group"><%= f.input :content %></div>
+	<div class="group"><%= f.input :section_id, as: :hidden, input_html: { value: params[:section_id]} %></div>
+
+	<%= f.submit "Submit", data: {disable_with: "Submitting..."} %>
+
+<% end %>
+
+<script>
+	autosize( $('#post_content') );
+</script>

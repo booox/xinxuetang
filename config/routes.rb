@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     end
 
     resources :sections
+    resources :posts
   end
 
 end

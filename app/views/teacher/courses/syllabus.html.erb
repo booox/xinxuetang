@@ -27,15 +27,17 @@
                       <td id="section-name" colspan="2">
                           <h3 class="pull-left">
                             <%= section.name %>
-                            <%= link_to "Edit", edit_teacher_section_path(section), class: "btn btn-primary btn-xs" %>
-                            <%= link_to "Delete", teacher_section_path(section), method: :delete, class: "btn btn-danger btn-xs" %>
+                            <%= link_to("Edit", edit_teacher_section_path(section), class: "btn btn-primary btn-xs") %>
+                            <%= link_to("Delete", teacher_section_path(section), method: :delete, class: "btn btn-danger btn-xs") %>
+                            <%= link_to("Add a Post", new_teacher_post_path(section_id: section.id), class: "btn btn-success btn-xs") %>
                           </h3>
-
                       </td>
                   </tr>
               </thead>
 
               <tbody>
+                <% if section.posts.present? %>
+                <% section.posts.each do |post| %>
                   <tr>
                       <td class="post post-link">
                           <div style="height: 35px; overflow:hidden;">
@@ -43,7 +45,7 @@
                                   <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp;
 
                                   <span class="fa fa-youtube-play " style="color:#9B9B9B;"></span>
-                                  [直播回放]1月3日 开学第一课
+                                  <%= post.name %>
                               </a>
                               <span></span>
                               <span></span>
@@ -53,7 +55,8 @@
                           <div class="syllabus-task-area"></div>
                       </td>
                   </tr>
-
+                <% end %>
+                <% end %>
               </tbody>
           </table>
           <% end %>

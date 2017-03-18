@@ -1,0 +1,2 @@
+module Teacher::PostsHelper
+end
