@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   root "welcome#index"
 
+  # for admin
+
+  # for teacher
   namespace :teacher do
     resources :courses do
       get 'syllabus' => "courses#syllabus"
@@ -13,5 +16,14 @@ Rails.application.routes.draw do
     resources :posts
     resources :tasks
   end
+
+  # for user
+  resources :courses do
+    get 'dashboard' => "courses#dashboard"
+  end
+
+
+
+
 
 end
