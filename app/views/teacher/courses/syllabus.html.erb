@@ -28,7 +28,10 @@
                           <h3 class="pull-left">
                             <%= section.name %>
                             <%= link_to("Edit", edit_teacher_section_path(section), class: "btn btn-primary btn-xs") %>
-                            <%= link_to("Delete", teacher_section_path(section), method: :delete, class: "btn btn-danger btn-xs") %>
+                            <%= link_to("Delete", teacher_section_path(section),
+                                              method: :delete,
+                                              class: "btn btn-danger btn-xs",
+                                              :data => { :confirm => "Are you sure? Delete:\n\n#{section.name}"}) %>
                             <%= link_to("Add a Post", new_teacher_post_path(section_id: section.id), class: "btn btn-success btn-xs") %>
                           </h3>
                       </td>
@@ -41,12 +44,20 @@
                   <tr>
                       <td class="post post-link">
                           <div style="height: 35px; overflow:hidden;">
-                              <a href="/posts/355">
+                            <%= link_to teacher_post_path(post) do %>
+                              <!-- <a href="/posts/355"> -->
                                   <i class="fa fa-circle" style="color:#1ecd97;"></i>&nbsp;
 
                                   <span class="fa fa-youtube-play " style="color:#9B9B9B;"></span>
                                   <%= post.name %>
-                              </a>
+                                  <%= link_to("Edit", edit_teacher_post_path(post), class: "btn btn-primary btn-xs") %>
+                                  <%= link_to("Delete", teacher_post_path(post),
+                                                method: :delete,
+                                                class: "btn btn-danger btn-xs",
+                                                  :data => { :confirm => "Are you sure? Delete:\n\n#{post.name}"}) %>
+                                  <%#= link_to("Add a Post", new_teacher_post_path(section_id: section.id), class: "btn btn-success btn-xs") %>
+                              <!-- </a> -->
+                            <% end %>
                               <span></span>
                               <span></span>
                           </div>

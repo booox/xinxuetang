@@ -18,7 +18,6 @@ class Teacher::SectionsController < ApplicationController
   def create
     @section = Section.new(section_params)
     @course = Course.find(params[:section][:course_id])
-    #@course = Course.find(params[:course_id])
     @section.course_id = @course.id
 
     if @section.save
