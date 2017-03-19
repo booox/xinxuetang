@@ -1,0 +1,35 @@
+<div class="container course-block" id="show-content">
+    <div class="row">
+        <!-- <div class="breadcrumb-block">
+            </div> -->
+    </div>
+    <div class="row">
+      <div class="course-task-show">
+          <div class="task-show-title clearfix">
+            <h3 class="pull-left"><%= @task.name %></h3>
+            <div class="pull-right">
+              <%= link_to "#", class: "opt-btn" do%>
+                    <i class=""></i>
+                    <span>看看同学</span>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="task-show-background">
+            <div class="post-link">
+                <span>所属教材：</span><br>
+                <%= link_to @post.name, teacher_post_path(@post) %>
+            </div>
+            <div class="content-font">
+                <div>
+                    <span>作业内容：</span>
+                </div>
+                <div>
+                  <%= @task.content %>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+</div>

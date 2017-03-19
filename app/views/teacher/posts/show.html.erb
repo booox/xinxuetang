@@ -21,6 +21,51 @@
             </div>
 
         </div>
+    </div>
 
+    <div class="row">
+      <div class="pull-right">
+          <%= link_to("Add a Task", new_teacher_task_path(post_id: @post.id), :class => "btn btn-success" ) %>
+      </div>
+
+      <div class="post-task-block" id="task">
+        <h4><i class="fa fa-file-code-o"></i>本节作业</h4>
+        <% if @post.tasks.present? %>
+        <% @post.tasks.each do |task| %>
+        <div class="panel panel-default">
+            <div class="panel-heading clearfix">
+                <div class="post-task-name">
+                    <h5>
+                        <%= link_to( task.name, teacher_task_path(task)) %>
+                        <%= link_to("Edit", edit_teacher_task_path(task), class: "btn btn-primary btn-xs") %>
+                        <%= link_to("Delete", teacher_task_path(task),
+                                          method: :delete,
+                                          class: "btn btn-danger btn-xs",
+                                          :data => { :confirm => "Are you sure? Delete:\n\n#{task.name}"}) %>
+
+                    </h5>
+                </div>
+                <div class="post-task-option">
+                    <%= link_to teacher_task_path(task), class: "opt-btn" do %>
+                        <i class=""></i>
+                        <span>提交作业</span>
+                    <% end %>
+                    <%= link_to "#", class: "opt-btn" do %>
+                        <i class=""></i>
+                        <span>看看同学</span>
+                    <% end %>
+                </div>
+            </div>
+            <div class="pannel-body">
+                <div class="post-task-descripiton">
+                  <%= task.content %>
+                </div>
+            </div>
+
+        </div>
+        <% end %>
+        <% end %>
+
+      </div>
     </div>
 </div>
